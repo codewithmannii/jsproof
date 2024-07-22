@@ -1,0 +1,42 @@
+// Step 1: Create a variable to hold your NFTs (using an array)
+let myNFTs = [];
+
+// Step 2: mintNFT function to create and store NFTs
+function mintNFT(name, description, owner) {
+    // Create an object for the NFT metadata
+    let nft = {
+        name: name,
+        description: description,
+        owner: owner
+    };
+    // Push the created NFT object into the array
+    myNFTs.push(nft);
+}
+
+// Step 3: listNFTs function to print NFTs metadata
+function listNFTs() {
+    console.log("Listing all NFTs:");
+    myNFTs.forEach((nft, index) => {
+        console.log(`NFT ${index + 1}:`);
+        console.log("Name: " + nft.name);
+        console.log("Description: " + nft.description);
+        console.log("Owner: " + nft.owner);
+        console.log("------------------");
+    });
+}
+
+// Step 4: getTotalSupply function to return the number of NFTs
+function getTotalSupply() {
+    return myNFTs.length;
+}
+
+// Example usage:
+// Mint some NFTs
+mintNFT("First NFT", "This is the first NFT created", "Mayank");
+mintNFT("Second NFT", "This is the second NFT created", "Gandhi");
+
+// List all NFTs
+listNFTs();
+
+// Get total number of NFTs
+console.log("Total number of NFTs minted: " + getTotalSupply());
